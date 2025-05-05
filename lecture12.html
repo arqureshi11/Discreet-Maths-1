@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lecture 12</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .question { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Lecture 12</h1>
+  <p>This is a placeholder for Lecture 12 content. Detailed notes and examples go here.</p>
+  <h2>Quiz</h2>
+  <form id="quiz">
+    
+<div class="question">
+  <p>1. Which of the following is a proposition?</p>
+  <input type="radio" name="q1" value="a"> Close the door<br>
+  <input type="radio" name="q1" value="b"> x + 2 is positive<br>
+  <input type="radio" name="q1" value="c"> 2 + 2 = 4<br>
+  <input type="radio" name="q1" value="d"> May I come in?<br>
+</div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+  </form>
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const correct = { q1: "c" };
+      let score = 0;
+      for (let key in correct) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correct[key]) score++;
+      }
+      document.getElementById("result").innerText = `Score: ${score} / 1`;
+    }
+  </script>
+</body>
+</html>
